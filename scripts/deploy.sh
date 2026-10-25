@@ -28,7 +28,7 @@ cp -a "$X/custom_components/ring_push_fix" "$CFG/custom_components/"
 echo "$TAG" > "$CFG/custom_components/ring_push_fix/.release"
 if ! grep -qE '^ring_push_fix:' "$CFG/configuration.yaml"; then
   cp "$CFG/configuration.yaml" "$REL/configuration.yaml.before-$TAG-$STAMP"
-  printf '\n# Stopgap for python-ring-doorbell#537 (http://192.168.1.210:3000/micca20/ha-ring-push-fix)\nring_push_fix:\n' >> "$CFG/configuration.yaml"
+  printf '\n# Stopgap for python-ring-doorbell#537 (https://github.com/micca20/ha-ring-push-fix)\nring_push_fix:\n' >> "$CFG/configuration.yaml"
   echo "added ring_push_fix: to configuration.yaml"
 fi
 rm -rf "$X" /tmp/ring_push_fix-$TAG.tgz

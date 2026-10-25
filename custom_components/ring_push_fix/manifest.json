@@ -4,10 +4,10 @@
   "codeowners": [
     "@micca20"
   ],
-  "documentation": "http://192.168.1.210:3000/micca20/ha-ring-push-fix",
+  "documentation": "https://github.com/micca20/ha-ring-push-fix",
   "integration_type": "service",
   "iot_class": "calculated",
-  "issue_tracker": "http://192.168.1.210:3000/micca20/ha-ring-push-fix/issues",
+  "issue_tracker": "https://github.com/micca20/ha-ring-push-fix/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

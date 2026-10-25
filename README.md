@@ -29,22 +29,32 @@ Nothing in `site-packages` is edited, so it survives HA updates.
 
 ## Install
 
-1. Copy `custom_components/ring_push_fix` into `<config>/custom_components/`
-   (or run `scripts/deploy.sh vX.Y.Z` for the CT111 setup).
-2. Add this to `configuration.yaml`:
+**HACS (recommended):** HACS > ⋮ > Custom repositories > add
+`https://github.com/micca20/ha-ring-push-fix` as type *Integration*, then
+download **Ring push fix**.
+
+**Manual:** copy `custom_components/ring_push_fix` into `<config>/custom_components/`.
+
+Then:
+
+1. Add this to `configuration.yaml`:
 
    ```yaml
    ring_push_fix:
    ```
 
-3. Restart Home Assistant. The log should show `ring_push_fix: parser patch applied`.
+2. Restart Home Assistant. The log should show `ring_push_fix: parser patch applied`.
 
 ## Remove
 
 Once upstream merges #540/#556 and HA ships the new ring-doorbell, remove
 `ring_push_fix:` from `configuration.yaml`, delete the folder and restart.
 
-## Releasing
+## Development
 
-`scripts/check.sh`, commit, `git tag -a vX.Y.Z`, push, `scripts/deploy.sh vX.Y.Z`,
-then create the Gitea release from the CHANGELOG section.
+The source lives on a private Gitea and is push-mirrored here (code + tags), so
+don't push to GitHub directly. Issues and PRs on GitHub are welcome.
+
+Releasing: `scripts/check.sh`, bump `manifest.json`, add a CHANGELOG section,
+commit, `git tag -a vX.Y.Z`, push to Gitea (the mirror syncs to GitHub), then
+create the GitHub release from the CHANGELOG section so HACS picks it up.
